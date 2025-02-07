@@ -13,3 +13,13 @@ kubectl get nodes
 kubectl get pods 
 ```
 - Get all pods of the default namespace
+
+
+```sh
+kubectl get all 
+```
+- Retrieve all services of a cluster 
+```sh
+kubectl api-ressources 
+```
+- Retrieve all api ressources 
