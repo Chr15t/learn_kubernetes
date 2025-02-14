@@ -91,3 +91,10 @@ echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
 # Initialize the Kubernetes control plane
 sudo kubeadm init
 
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+kubectl apply -f calico.yaml
