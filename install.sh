@@ -58,8 +58,36 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
+
+# Prevent the installed versions from being automatically upgraded
 sudo apt-mark hold kubelet kubeadm kubectl
 
 
 sudo systemctl enable kubelet.service
 sudo systemctl enable containerd.service
+
+# Download the Calico network plugin configuration file for pod networking
+wget https://raw.githubusercontent.com/projectcalico/calico/master/manifests/calico.yaml
+
+# Edit the Calico configuration file
+vi calico.yaml
+
+
+# Search for CALICO_IPV4POOL_CIDR and change the default network if needed
+
+
+# Disable swap memory to ensure kubelet works properly
+sudo swappoff -a 
+
+# Enable IP forwarding for networking between pods
+echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
+
+
+# Configure sysctl settings for networking
+# Uncomment the following line in /etc/sysctl.conf to enable IP forwarding
+# net.ipv4.ip_forward=1 
+
+
+# Initialize the Kubernetes control plane
+sudo kubeadm init
+
