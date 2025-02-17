@@ -91,6 +91,9 @@ echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
 # Initialize the Kubernetes control plane
 sudo kubeadm init
 
+# sudo kubeadm init --apiserver-advertise-address=master_ip --pod-network-cidr=pod_networks/16
+
+
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config

@@ -23,3 +23,8 @@ kubectl get all
 kubectl api-ressources 
 ```
 - Retrieve all api ressources 
+
+```sh
+sudo kubeadm reset
+```
+- reset the cluster kubernetes
