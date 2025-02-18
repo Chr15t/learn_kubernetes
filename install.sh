@@ -43,7 +43,13 @@ sudo apt-get install -y containerd.io
 sudo containerd config default | sudo tee /etc/containerd/config.toml 
 
 # Edit the configuration file to set `SystemdCgroup = true`
+
+#[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+ #       ...
+  #        [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+    #        SystemdCgroup = true 
 # Path: /etc/containerd/config.toml
+sudo sed -i 's/            SystemdCgroup = false/            SystemdCgroup = true/' /etc/containerd/config.toml
 
 
 # restart service 
@@ -77,7 +83,7 @@ vi calico.yaml
 
 
 # Disable swap memory to ensure kubelet works properly
-sudo swappoff -a 
+sudo swapoff -a 
 
 # Enable IP forwarding for networking between pods
 echo "1" | sudo tee /proc/sys/net/ipv4/ip_forward
