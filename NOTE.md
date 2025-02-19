@@ -25,7 +25,6 @@ kubectl api-resources
 - Retrieve all api ressources 
 
 
-
 ```sh
 kubectl explain pod | more 
 kubectl explain deployment.spec # output an explanation of spec 
