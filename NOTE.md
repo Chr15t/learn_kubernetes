@@ -20,9 +20,22 @@ kubectl get all
 ```
 - Retrieve all services of a cluster 
 ```sh
-kubectl api-ressources 
+kubectl api-resources 
 ```
 - Retrieve all api ressources 
+
+
+
+```sh
+kubectl explain pod | more 
+```
+- Retrieve explanation of a resources 
+
+
+```sh
+kubectl describe nodes/pods name | more
+```
+- Retrieve description of a pod or nodes
 
 ```sh
 sudo kubeadm reset
