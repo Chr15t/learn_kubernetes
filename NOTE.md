@@ -28,8 +28,11 @@ kubectl api-resources
 
 ```sh
 kubectl explain pod | more 
+kubectl explain deployment.spec # output an explanation of spec 
 ```
 - Retrieve explanation of a resources 
+
+
 
 
 ```sh
