@@ -41,3 +41,10 @@ kubectl describe nodes/pods name | more
 sudo kubeadm reset
 ```
 - reset the cluster kubernetes
+
+```sh
+kubectl apply -f deployment.yaml
+# -f specify the manifest 
+# manifest can be JSON or YAML
+```
+- deploy and run on pod
