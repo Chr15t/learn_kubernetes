@@ -50,3 +50,20 @@ kubectl apply -f deployment.yaml
 # manifest can be JSON or YAML
 ```
 - deploy and run on pod
+
+```sh 
+sudo crictl --runtime-endpoint unix:///run/containerd/containerd.sock ps
+```
+output all pod running 
+
+
+### Controller
+
+```sh
+kubectl run podName --image=source_image
+```
+Deploy a pod without controller
+### Scalling 
+```sh
+sudo kubectl scale deployment deployment_name 
+```
