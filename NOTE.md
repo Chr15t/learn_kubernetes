@@ -63,7 +63,18 @@ output all pod running
 kubectl run podName --image=source_image
 ```
 Deploy a pod without controller
+
+
+
 ### Scalling 
 ```sh
-sudo kubectl scale deployment deployment_name 
+sudo kubectl scale deployment deployment_name --replicas=4
 ```
+
+```bash
+kubeadm token create --print-join-command
+```
+Generate new token
+
+
+kubectl get events --sort-by=".metadata.managedFields[0].time"
