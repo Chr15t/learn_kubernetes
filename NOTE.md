@@ -78,3 +78,11 @@ Generate new token
 
 
 kubectl get events --sort-by=".metadata.managedFields[0].time"
+
+
+
+```sh
+kubectl rollout history deployment deplooyment_name --revision=1 
+kubectl rolloutt undo deployment deployment_name  to --revision=1
+```
+Rollback 
